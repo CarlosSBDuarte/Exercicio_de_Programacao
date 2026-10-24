@@ -33,3 +33,17 @@ def faz_jogada(tabuleiro, linha, coluna):
         tabuleiro[linha][coluna] = '-'
 
     return tabuleiro
+
+def posiciona_frota(info_navio):
+
+    tabuleiro_montado = []
+    for i in range(10):
+        tabuleiro_montado.append([0]*10)        
+             
+    for navios, posicoes in info_navio.items():
+       for i in range(len(posicoes)):
+           for j in range(len(posicoes[i])):
+               pos = posicoes[i][j]
+               tabuleiro_montado[pos[0]][pos[1]] = 1
+
+    return tabuleiro_montado
