@@ -47,3 +47,21 @@ def posiciona_frota(info_navio):
                tabuleiro_montado[pos[0]][pos[1]] = 1
 
     return tabuleiro_montado
+
+def afundados(info_embarcacoes, tabuleiro_estado_atual):
+    afundado = 0
+    for navio, posicoes in info_embarcacoes.items():
+        for i in range(len(posicoes)):
+            contagem_X = 0
+            for j in range(len(posicoes[i])):
+                posi = posicoes[i][j]
+                if tabuleiro_estado_atual[posi[0]][posi[1]] == 'X':
+                    contagem_X += 1
+                else: 
+                    break
+            if contagem_X == len(posicoes[i]):
+                afundado += 1
+
+    return afundado
+
+
