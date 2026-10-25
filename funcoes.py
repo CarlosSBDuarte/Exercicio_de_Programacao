@@ -64,4 +64,30 @@ def afundados(info_embarcacoes, tabuleiro_estado_atual):
 
     return afundado
 
+def posicao_valida(posicoes_navios, linha, coluna, orientacao, tamanho):
+
+    navio = define_posicoes(linha, coluna, orientacao, tamanho)
+
+    for k in range(len(navio)):
+        if navio[k][0] < 0 or navio[k][0] > 9 or navio[k][1] < 0 or navio[k][1] > 9:
+            return False
+    
+    for navios, posicoes in posicoes_navios.items():
+        for i in range(len(posicoes)):
+            for j in range(len(posicoes[i])):
+                pos = posicoes[i][j]
+                for k in range(len(navio)):
+                        if pos[0] == navio[k][0] and pos[1] == navio[k][1]:
+                            return False
+    
+
+    return True
+            
+        
+                            
+
+
+
+
+
 
