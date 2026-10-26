@@ -82,12 +82,5 @@ def posicao_valida(posicoes_navios, linha, coluna, orientacao, tamanho):
     
 
     return True
-            
-        
-                            
-
-
-
-
 
 
