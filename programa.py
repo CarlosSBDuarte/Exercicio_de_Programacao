@@ -25,6 +25,7 @@ for nome,info in qnt_tamanhos.items():
                 orientacao = 'horizontal'
         while posicao_valida(frota, linha, coluna, orientacao, info[1]) == False:
             print('Esta posição não está válida!')
+            print(f'Insira as informações referentes ao navio {nome} que possui tamanho {info[1]}')
             if nome == 'submarino':
                 linha = int(input('Qual a linha?'))
                 coluna = int(input('Qual a coluna?'))
